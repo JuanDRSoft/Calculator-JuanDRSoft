@@ -5,7 +5,7 @@ import History from "./components/History";
 
 function App() {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen bg-black">
       <Screen />
       <Keyboard />
       <History />
