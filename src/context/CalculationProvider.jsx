@@ -98,6 +98,11 @@ const CalculationProvider = ({ children }) => {
       return;
     }
 
+    if (operator == "÷" && second == "0") {
+      toast.error("No se puede dividir entre cero");
+      return;
+    }
+
     if (!dataHistorial.length) {
       toast.info(
         "Se comenzo un nuevo historial de tus operaciones, para verlo haz clic en historial"
