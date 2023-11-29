@@ -16,7 +16,7 @@ const History = () => {
 
       <div
         id="historial"
-        className="md:w-[500px] bg-black fixed duration-500 translate-x-[100%] top-0 h-screen right-0 shadow-xl p-5 border-l border-opacity-20 rounded-l-2xl border-white "
+        className="md:w-[500px] w-full bg-black fixed duration-500 translate-x-[100%] top-0 h-screen right-0 shadow-xl p-5 border-l border-opacity-20 rounded-l-2xl border-white "
       >
         <div className="flex justify-between items-center">
           <h1 className="font-bold text-white text-2xl">Historial</h1>
