@@ -44,6 +44,10 @@ const CalculationProvider = ({ children }) => {
     setOperator("");
     setFirts(product);
     setValue(product);
+
+    const data = { result: product, first, second, operator };
+    localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
+    setHistorial([...dataHistorial, data]);
   };
 
   const subtract = () => {
@@ -52,6 +56,10 @@ const CalculationProvider = ({ children }) => {
     setOperator("");
     setFirts(residue);
     setValue(residue);
+
+    const data = { result: residue, first, second, operator };
+    localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
+    setHistorial([...dataHistorial, data]);
   };
 
   const module = () => {
@@ -60,6 +68,10 @@ const CalculationProvider = ({ children }) => {
     setOperator("");
     setFirts(residue);
     setValue(residue);
+
+    const data = { result: residue, first, second, operator };
+    localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
+    setHistorial([...dataHistorial, data]);
   };
 
   const percentage = () => {
@@ -68,6 +80,10 @@ const CalculationProvider = ({ children }) => {
     setOperator("");
     setFirts(residue);
     setValue(residue);
+
+    const data = { result: residue, first, second, operator };
+    localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
+    setHistorial([...dataHistorial, data]);
   };
 
   const equal = () => {
