@@ -12,7 +12,7 @@ const History = () => {
     <div>
       <button
         onClick={toggle}
-        className="absolute bg-zinc-900 p-1 px-5 top-5 right-5 text-white rounded-full font-semibold"
+        className="absolute hover:bg-zinc-700 duration-200 bg-zinc-900 p-1 px-5 top-5 right-5 text-white rounded-full font-semibold"
       >
         Historial
       </button>
@@ -26,7 +26,7 @@ const History = () => {
 
           <button
             onClick={toggle}
-            className="bg-yellow-500 p-1 px-4 flex items-center gap-1 rounded-full font-semibold"
+            className="bg-yellow-500 hover:bg-yellow-600 duration-200 p-1 px-4 flex items-center gap-1 rounded-full font-semibold"
           >
             <i class="fas fa-times"></i>Cerrar
           </button>
@@ -65,7 +65,7 @@ const History = () => {
           {dataHistorial.length && (
             <button
               onClick={deleteHistorial}
-              className="bg-yellow-500 w-[50%] p-1 rounded-full text-black font-semibold flex items-center justify-center gap-2"
+              className="bg-yellow-500 hover:bg-yellow-600 duration-200 w-[50%] p-1 rounded-full text-black font-semibold flex items-center justify-center gap-2"
             >
               <i class="fas fa-trash-alt"></i>Limpiar Historial
             </button>

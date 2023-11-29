@@ -27,7 +27,7 @@ const Keyboard = () => {
       <div className="grid grid-cols-4 gap-1 h-full">
         <button
           onClick={deleteAll}
-          className="bg-zinc-900 text-yellow-500 font-bold text-3xl py-4"
+          className="bg-zinc-900 hover:bg-zinc-800 duration-200 text-yellow-500 font-bold text-3xl py-4"
         >
           C
         </button>
@@ -37,7 +37,7 @@ const Keyboard = () => {
             setOperator("÷");
             setValue("");
           }}
-          className="bg-zinc-900 text-yellow-500 text-3xl py-4"
+          className="bg-zinc-900 hover:bg-zinc-800 duration-200 text-yellow-500 text-3xl py-4"
         >
           <i class="fas fa-divide"></i>
         </button>
@@ -47,14 +47,14 @@ const Keyboard = () => {
             setOperator("x");
             setValue("");
           }}
-          className="bg-zinc-900 text-yellow-500 text-3xl py-4"
+          className="bg-zinc-900 hover:bg-zinc-800 duration-200 text-yellow-500 text-3xl py-4"
         >
           <i class="fas fa-times"></i>
         </button>
 
         <button
           onClick={deleteOne}
-          className="bg-zinc-900 text-yellow-500 text-3xl py-4"
+          className="bg-zinc-900 hover:bg-zinc-800 duration-200 text-yellow-500 text-3xl py-4"
         >
           <i class="fas fa-backspace"></i>
         </button>
@@ -62,7 +62,7 @@ const Keyboard = () => {
         {[7, 8, 9].map((e) => (
           <button
             onClick={() => setValue(value + "" + e)}
-            className="bg-zinc-800 text-white font-bold text-3xl py-4"
+            className="bg-zinc-800 hover:bg-zinc-700 duration-200 text-white font-bold text-3xl py-4"
           >
             {e}
           </button>
@@ -73,7 +73,7 @@ const Keyboard = () => {
             setOperator("-");
             setValue("");
           }}
-          className="bg-zinc-900 text-yellow-500 text-3xl py-4"
+          className="bg-zinc-900 hover:bg-zinc-800 duration-200 text-yellow-500 text-3xl py-4"
         >
           <i class="fas fa-window-minimize"></i>
         </button>
@@ -81,7 +81,7 @@ const Keyboard = () => {
         {[4, 5, 6].map((e) => (
           <button
             onClick={() => setValue(value + "" + e)}
-            className="bg-zinc-800 text-white font-bold text-3xl py-4"
+            className="bg-zinc-800 hover:bg-zinc-700 duration-200 text-white font-bold text-3xl py-4"
           >
             {e}
           </button>
@@ -92,7 +92,7 @@ const Keyboard = () => {
             setOperator("+");
             setValue("");
           }}
-          className="bg-zinc-900 text-yellow-500 text-3xl py-4"
+          className="bg-zinc-900 hover:bg-zinc-800 duration-200 text-yellow-500 text-3xl py-4"
         >
           <i class="fas fa-plus"></i>
         </button>
@@ -103,7 +103,7 @@ const Keyboard = () => {
           {[1, 2, 3].map((e) => (
             <button
               onClick={() => setValue(value + "" + e)}
-              className="bg-zinc-800 text-white font-bold text-3xl py-4"
+              className="bg-zinc-800 hover:bg-zinc-700 duration-200 text-white font-bold text-3xl py-4"
             >
               {e}
             </button>
@@ -114,7 +114,7 @@ const Keyboard = () => {
               setOperator("%");
               setValue("");
             }}
-            className="bg-zinc-800 text-white text-3xl py-4"
+            className="bg-zinc-800 hover:bg-zinc-700 duration-200 text-white text-3xl py-4"
           >
             <i class="fas fa-percent"></i>
           </button>
@@ -122,7 +122,7 @@ const Keyboard = () => {
           {[0, "."].map((e) => (
             <button
               onClick={() => setValue(value + "" + e)}
-              className="bg-zinc-800 text-white font-bold text-3xl py-4"
+              className="bg-zinc-800 hover:bg-zinc-700 duration-200 text-white font-bold text-3xl py-4"
             >
               {e}
             </button>
@@ -131,7 +131,7 @@ const Keyboard = () => {
 
         <button
           onClick={equal}
-          className="bg-yellow-500 text-black text-3xl py-4 w-[32.9%]"
+          className="bg-yellow-500 hover:bg-yellow-600 duration-200 text-black text-3xl py-4 w-[32.9%]"
         >
           <i class="fas fa-equals"></i>
         </button>
