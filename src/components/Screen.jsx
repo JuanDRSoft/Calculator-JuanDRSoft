@@ -1,6 +1,9 @@
 import React from "react";
+import useCalculations from "../hooks/useCalculations";
 
 const Screen = () => {
+  const { input } = useCalculations();
+
   return (
     <div className="h-[39.5%] relative">
       <div className="absolute top-5 left-5">
@@ -17,9 +20,10 @@ const Screen = () => {
           20 <span className="text-yellow-500 text-opacity-60">+</span> 10
         </p>
         <input
-          value={30}
+          value={input}
           className="text-9xl w-full text-end md:pr-20 pr-10 text-white bg-transparent border-none outline-none"
-          type="number"
+          type="text"
+          disabled
         />
       </div>
     </div>
