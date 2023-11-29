@@ -1,7 +1,16 @@
 import { useState } from "react";
+import Keyboard from "./components/Keyboard";
+import Screen from "./components/Screen";
+import History from "./components/History";
 
 function App() {
-  return <div className="flex justify-center">app</div>;
+  return (
+    <div className="w-screen h-screen">
+      <Screen />
+      <Keyboard />
+      <History />
+    </div>
+  );
 }
 
 export default App;
