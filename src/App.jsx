@@ -14,7 +14,7 @@ function App() {
         <Keyboard />
         <History />
       </div>
-      <ToastContainer theme="dark" />
+      <ToastContainer theme="dark" position="top-left" />
     </CalculationProvider>
   );
 }

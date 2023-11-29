@@ -10,13 +10,14 @@ const CalculationProvider = ({ children }) => {
   const [input, setInput] = useState("");
   const [value, setValue] = useState("");
   const [dataHistorial, setHistorial] = useState([]);
+  const [temporalHistorial, setTemporal] = useState({});
 
   useEffect(() => {
     const historial = JSON.parse(localStorage.getItem("historial"));
     if (historial) {
       setHistorial(historial);
     }
-  }, []);
+  }, [temporalHistorial]);
 
   useEffect(() => {
     if (!first) {
@@ -33,9 +34,10 @@ const CalculationProvider = ({ children }) => {
     setFirts(suma);
     setValue(suma);
 
-    const data = { result: suma, first, second, operator };
+    const fecha = new Date();
+    const data = { result: suma, first, second, operator, date: fecha };
     localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
-    setHistorial([...dataHistorial, data]);
+    setTemporal(data);
   };
 
   const multiply = () => {
@@ -45,9 +47,10 @@ const CalculationProvider = ({ children }) => {
     setFirts(product);
     setValue(product);
 
-    const data = { result: product, first, second, operator };
+    const fecha = new Date();
+    const data = { result: product, first, second, operator, date: fecha };
     localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
-    setHistorial([...dataHistorial, data]);
+    setTemporal(data);
   };
 
   const subtract = () => {
@@ -57,9 +60,10 @@ const CalculationProvider = ({ children }) => {
     setFirts(residue);
     setValue(residue);
 
-    const data = { result: residue, first, second, operator };
+    const fecha = new Date();
+    const data = { result: residue, first, second, operator, date: fecha };
     localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
-    setHistorial([...dataHistorial, data]);
+    setTemporal(data);
   };
 
   const module = () => {
@@ -69,9 +73,10 @@ const CalculationProvider = ({ children }) => {
     setFirts(residue);
     setValue(residue);
 
-    const data = { result: residue, first, second, operator };
+    const fecha = new Date();
+    const data = { result: residue, first, second, operator, date: fecha };
     localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
-    setHistorial([...dataHistorial, data]);
+    setTemporal(data);
   };
 
   const percentage = () => {
@@ -81,15 +86,22 @@ const CalculationProvider = ({ children }) => {
     setFirts(residue);
     setValue(residue);
 
-    const data = { result: residue, first, second, operator };
+    const fecha = new Date();
+    const data = { result: residue, first, second, operator, date: fecha };
     localStorage.setItem("historial", JSON.stringify([...dataHistorial, data]));
-    setHistorial([...dataHistorial, data]);
+    setTemporal(data);
   };
 
   const equal = () => {
     if ([operator].includes("")) {
       toast.error("Primero Selecciona un operador");
       return;
+    }
+
+    if (!dataHistorial.length) {
+      toast.info(
+        "Se comenzo un nuevo historial de tus operaciones, para verlo haz clic en historial"
+      );
     }
 
     switch (operator) {
@@ -131,6 +143,12 @@ const CalculationProvider = ({ children }) => {
     }
   };
 
+  const deleteHistorial = () => {
+    setHistorial([]);
+    setTemporal({});
+    localStorage.removeItem("historial");
+  };
+
   return (
     <CalculationContext.Provider
       value={{
@@ -146,6 +164,9 @@ const CalculationProvider = ({ children }) => {
         deleteOne,
         value,
         setValue,
+        temporalHistorial,
+        dataHistorial,
+        deleteHistorial,
       }}
     >
       {children}

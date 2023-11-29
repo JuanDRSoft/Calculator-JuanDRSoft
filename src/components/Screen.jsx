@@ -2,7 +2,7 @@ import React from "react";
 import useCalculations from "../hooks/useCalculations";
 
 const Screen = () => {
-  const { input } = useCalculations();
+  const { input, temporalHistorial } = useCalculations();
 
   return (
     <div className="h-[39.5%] relative">
@@ -17,7 +17,11 @@ const Screen = () => {
 
       <div className="absolute bottom-10 w-full">
         <p className="text-white text-4xl text-end md:pr-20 pr-10 text-opacity-60">
-          20 <span className="text-yellow-500 text-opacity-60">+</span> 10
+          {temporalHistorial.first}{" "}
+          <span className="text-yellow-500 text-opacity-60">
+            {temporalHistorial.operator}
+          </span>{" "}
+          {temporalHistorial.second}
         </p>
         <input
           value={input}
